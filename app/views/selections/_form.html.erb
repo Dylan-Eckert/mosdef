@@ -1,11 +1,11 @@
-<%= form_for @selection do |f| %>
-  <% if @selection.errors.any? %>
+<%= form_for([@menu, @menu.selections.build]) do |f| %>
+  <% if @menu_selection.errors.any? %>
     <div>
       <h2>
         Please fix the following errors:
       </h2>
       <ul>
-        <% @selection.errors.full_messages.each do |msg| %>
+        <% @menu_selection.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -36,4 +36,4 @@
   </p>
 <% end %>
 
-<p><%= link_to 'Cancel and return to Selections', selections_path() %></p>
+<p><%= link_to 'Cancel and return to Selections', menu_selections_path() %></p>

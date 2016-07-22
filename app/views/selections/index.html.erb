@@ -1,7 +1,7 @@
 <h1>Selections</h1>
 <p>
   <%= link_to 'Home', root_path() %> <br>
-  <%= link_to 'Add a Selection', new_selection_path() %>
+  <%= link_to 'Add a Selection', new_menu_selection_path() %>
 </p>
 
 <table>
@@ -18,8 +18,8 @@
       <td><%= selection.name %></td>
       <td><%= selection.ingredients %></td>
       <td><%= selection.price %></td>
-      <td><%= link_to 'Show', selection_path(selection) %></td>
-      <td><%= link_to 'Edit', edit_selection_path(selection) %></td>
+      <td><%= link_to 'Show', menu_selection_path(selection) %></td>
+      <td><%= link_to 'Edit', edit_menu_selection_path(selection) %></td>
     </tr>
   <% end %>
 </table>

@@ -5,6 +5,7 @@ class SelectionsController < ApplicationController
 
   def new
     @selection = Selection.new
+    @menu = Menu.find(params[:menu_id])
   end
 
   def edit
