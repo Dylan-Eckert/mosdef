@@ -4,8 +4,8 @@ class SelectionsController < ApplicationController
   end
 
   def new
-    @selection = Selection.new
     @menu = Menu.find(params[:menu_id])
+    @selection = Selection.new
   end
 
   def edit
@@ -13,7 +13,8 @@ class SelectionsController < ApplicationController
   end
 
   def create
-  @selection = Selection.new(selections_params)
+  @menu = Menu.find(params[:menu_id])
+  @selection = @menu.selections.build(selections_params)
 
     if @selection.save
       redirect_to @selection

@@ -1,0 +1,24 @@
+<h1>Restaurants</h1>
+<p>
+  <%= link_to 'Home', root_path() %> <br>
+  <%= link_to 'Add a Restaurant', new_restaurant_path() %>
+</p>
+
+<table>
+  <tr>
+    <th>Restaurant:</th>
+    <th>Description:</th>
+  </tr>
+
+  <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= restaurant.title %></td>
+      <td><%= restaurant.body %></td>
+      <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+      <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+      <td><%= link_to 'Delete', restaurant_path(restaurant),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

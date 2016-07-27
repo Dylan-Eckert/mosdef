@@ -5,6 +5,7 @@ class CreateSelections < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :ingredients
       t.decimal :price
+      t.references :menu, foreign_key: true
 
       t.timestamps
     end

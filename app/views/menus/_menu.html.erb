@@ -1,0 +1,26 @@
+<!-- <p>
+  <strong>Menu Title:</strong>
+  <%= menu.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= menu.body %>
+</p> -->
+<table>
+  <tr>
+    <th>Menu:</th>
+    <th>Description:</th>
+  </tr>
+
+  <% @restaurant.menus.each do |menu| %>
+    <tr>
+      <td><%= menu.title %></td>
+      <td><%= menu.body %></td>
+      <td><%= link_to 'Show', menu_path(menu) %></td>
+      <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
+      <td><%= link_to 'Delete', menu_path(menu),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

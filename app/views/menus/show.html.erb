@@ -8,10 +8,8 @@
 </p>
 <p>
   <strong>Selections:</strong>
-  <%= @selection %>
-  <%= link_to 'Add an Item', new_menu_selection_path(@menu) %>
+  <%= render @menu.selections %>
+  </p>
+  <p>
+
 </p>
-
-
-
-<p><%= link_to 'Back to Menus', menus_path() %></p>

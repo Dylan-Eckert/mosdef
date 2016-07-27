@@ -1,0 +1,17 @@
+<p>
+  <strong>Restaurant Title:</strong>
+  <%= @restaurant.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant.body %>
+</p>
+<p>
+  <strong>Menus:</strong>
+  <%= link_to 'Add a Menu', new_restaurant_menu_path(@restaurant) %>
+  <%= render @restaurant.menus %>
+</p>
+<p>
+  <%= link_to 'Home', root_path() %> <br>
+  <%= link_to 'View Restaurants', restaurants_path() %>
+</p>

@@ -4,15 +4,19 @@ class MenusController < ApplicationController
   end
 
   def new
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @menu = Menu.new
+    @rest_link = @restaurant
   end
 
   def edit
     @menu = Menu.find(params[:id])
+    @rest_link = @menu.restaurant
   end
 
   def create
-  @menu = Menu.new(menus_params)
+  @restaurant = Restaurant.find(params[:restaurant_id])
+  @menu = @restaurant.menus.build(menus_params)
 
     if @menu.save
       redirect_to @menu

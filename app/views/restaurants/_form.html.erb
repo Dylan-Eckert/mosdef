@@ -1,11 +1,11 @@
-<%= form_for([@restaurant, @menu]) do |f| %>
-  <% if @menu.errors.any? %>
+<%= form_for @restaurant do |f| %>
+  <% if @restaurant.errors.any? %>
     <div>
       <h2>
         Please fix the following errors:
       </h2>
       <ul>
-        <% @menu.errors.full_messages.each do |msg| %>
+        <% @restaurant.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -23,5 +23,8 @@
 
   <p>
     <%= f.submit %>
+  </p>
+  <p>
+    <%= link_to 'Cancel and View Restaurants', restaurants_path() %>
   </p>
 <% end %>
