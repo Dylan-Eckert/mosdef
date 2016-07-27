@@ -37,8 +37,15 @@ class SelectionsController < ApplicationController
     end
   end
 
+  def destroy
+    @selection = Selection.find(params[:id])
+    @selection.destroy
+
+    redirect_to restaurants_path
+  end
+
   private
     def selections_params
-      params.require(:selection).permit(:menu, :name, :ingredients, :price)
+      params.require(:selection).permit(:name, :ingredients, :price)
     end
 end

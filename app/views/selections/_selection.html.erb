@@ -1,15 +1,20 @@
-<p>
-  <%= link_to 'Home', root_path() %> <br>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= selection.name %>
-</p>
-<p>
-  <strong>Ingeredients:</strong>
-  <%= selection.ingredients %>
-</p>
-<p>
-  <strong>Price:</strong>
-  <%= selection.price %>
-</p>
+<table>
+  <tr>
+    <th>Name:</th>
+    <th>Ingredients:</th>
+    <th>Price:</th>
+  </tr>
+
+  <% @menu.selections.each do |sel| %>
+    <tr>
+      <td><%= sel.name %></td>
+      <td><%= sel.ingredients %></td>
+      <td><%= sel.price %></td>
+      <td><%= link_to 'Show', selection_path(selection) %></td>
+      <td><%= link_to 'Edit', edit_selection_path(selection) %></td>
+      <td><%= link_to 'Delete', selection_path(selection),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

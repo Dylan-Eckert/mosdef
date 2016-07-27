@@ -1,4 +1,8 @@
 <p>
+  <%= link_to 'Home', root_path() %> <br>
+  <%= link_to 'View Restaurants', restaurants_path() %>
+</p>
+<p>
   <strong>Menu Title:</strong>
   <%= @menu.title %>
 </p>
@@ -8,8 +12,6 @@
 </p>
 <p>
   <strong>Selections:</strong>
+  <%= link_to 'Add a Selection', new_menu_selection_path(@menu) %>
   <%= render @menu.selections %>
   </p>
-  <p>
-
-</p>

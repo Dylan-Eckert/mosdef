@@ -39,6 +39,13 @@ class MenusController < ApplicationController
     end
   end
 
+  def destroy
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+
+    redirect_to restaurants_path
+  end
+
   private
     def menus_params
       params.require(:menu).permit(:title, :body)

@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20160726204602) do
   end
 
   create_table "selections", force: :cascade do |t|
-    t.string   "menu"
     t.string   "name"
     t.text     "ingredients"
     t.decimal  "price"
