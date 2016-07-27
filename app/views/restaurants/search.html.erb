@@ -1,0 +1,6 @@
+<%= form_tag search_results_restaurants_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :query %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>

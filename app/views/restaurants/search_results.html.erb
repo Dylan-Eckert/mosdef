@@ -1,0 +1,16 @@
+<h1>Search Restaurants</h1>
+
+<table>
+  <tr>
+    <th>Name:</th>
+    <th>Description:</th>
+  </tr>
+
+  <% @blogs.each do |res| %>
+    <tr>
+      <td><%= res.title %></td>
+      <td><%= res.body %></td>
+      <td><%= link_to 'Show', restaurant %></td>
+    </tr>
+  <% end %>
+</table>

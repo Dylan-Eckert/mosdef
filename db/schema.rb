@@ -10,32 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726204602) do
-
-  create_table "menus", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "restaurant_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["restaurant_id"], name: "index_menus_on_restaurant_id"
-  end
-
-  create_table "restaurants", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "selections", force: :cascade do |t|
-    t.string   "name"
-    t.text     "ingredients"
-    t.decimal  "price"
-    t.integer  "menu_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["menu_id"], name: "index_selections_on_menu_id"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

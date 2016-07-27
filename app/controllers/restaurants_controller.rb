@@ -23,6 +23,15 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+
+    # check if :order_by param is nil
+    if params[:order_by].nil?
+      # if it's nil, default to descending order
+      @menus = @restaurant.menus.order(created_at: :desc)
+    else
+      # if there is a params[:order_by], then use its value
+      @menus = @restaurant.menus.order("created_at " + params[:order_by])
+    end
   end
 
   def update
@@ -33,6 +42,14 @@ class RestaurantsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def search
+
+  end
+
+  def search_results
+      @restaurants = Restaurant.where("name like ?", "%#{params[:query]}%")
   end
 
   def destroy
